@@ -1,0 +1,42 @@
+<style>
+body {
+    margin: 0;
+    padding: 0;
+}
+#one, #two {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: #06A;
+}
+
+#one {
+    margin: 100px 0 0 200px;
+}
+#two {
+    margin: 100px 0 0 400px;
+}
+
+#line {
+    position: absolute;
+    top: 170px;
+    left: 270px;
+    width: 3px; /* your chosen line width */
+    height: 162px;
+    background-color: #06A; /* line color */
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transform: rotate( -51deg);
+    -moz-transform: rotate( -51deg);
+    -o-transform: rotate( -51deg);
+    -ms-transform: rotate( -51deg);
+    transform: rotate( -51deg);
+}
+</style>
+
+<div id="one"></div>
+<div id="two"></div>
+<div id="line"></div>
