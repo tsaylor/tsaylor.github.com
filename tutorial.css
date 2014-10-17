@@ -1,0 +1,47 @@
+body {
+    font-family: Georgia, "Times New Roman";
+    font-size: 1em;
+    color: #333;
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    width: 990px;
+    margin: auto;
+    background-color: #ffffec;
+    padding: 1em;
+}
+
+code {
+    font-family: Courier;
+    font-size: .9em;
+}
+
+pre {
+    margin: 0 0 0 2em;
+    padding: 1em;
+    background-color: #ddd;
+    display: inline-block;
+    min-width: 40%;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+.exercises {
+    margin: 0 0 0 2em;
+    padding: 1em 1em 0 0;
+    background-color: #bbf;
+    border-radius: 1em;
+    display: inline-block;
+    min-width: 40%;
+}
+
+.exercises::before {
+    font-weight: bold;
+    content: "Exercises";
+    margin-left: 1em;
+}

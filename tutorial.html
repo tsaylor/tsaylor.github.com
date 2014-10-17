@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="tutorial.css">
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div class="content">
+<h1 id="python-in-interactive-mode">Python in Interactive Mode</h1>
+<h2 id="open-your-computers-command-line-interface">Open your computer's command line interface</h2>
+<h3 id="windows">Windows</h3>
+<p>Open the run dialog (Windows key + r) and run the command &quot;cmd&quot;. A window will open with a prompt like this:</p>
+<pre><code>C:\&gt;</code></pre>
+<h3 id="mac">Mac</h3>
+<p>From the spotlight, search for &quot;terminal&quot; and run the application. A window will open with a prompt something like this:</p>
+<pre><code>username@computername:~$</code></pre>
+<p>This is the <em>system shell</em>. You will use this to run the Python interactive interpreter and Python programs. In this document, we will represent commands intended to be run in the system shell with the <code>$</code> character, like so:</p>
+<pre><code>$ &lt;command to be run&gt;</code></pre>
+<h2 id="open-the-python-interactive-shell">Open the Python interactive shell</h2>
+<p>At the system shell, run the following:</p>
+<pre><code>$ python
+Python 2.7.5 (default, Mar  9 2014, 22:15:05)
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;</code></pre>
+<p>You will see something like the output above. The <code>&gt;&gt;&gt;</code> is the prompt for the Python interactive shell. You can think of this as an interactive Python program. You can execute Python statements and see the result immediately.</p>
+<h2 id="integers">Integers</h2>
+<p>Let's start with some simple math in the Python shell. Run the following:</p>
+<pre><code>&gt;&gt;&gt; 1 + 1
+2
+&gt;&gt;&gt; 1 - 2
+-1
+&gt;&gt;&gt; 2 * 2
+4
+&gt;&gt;&gt; 6 / 3
+2
+&gt;&gt;&gt; 2 ** 3
+8 </code></pre>
+<p>Each of these math expressions is evaluated, and the result is displayed on the next line. The <code>**</code> operator is for exponents; two to the third power is eight.</p>
+<div class="exercises">
+<ol style="list-style-type: decimal">
+<li>Calculate 39482 * 243 using the Python shell.</li>
+<li>What happens when you divide 5/2? What about 5.0/2.0?</li>
+</ol>
+</div>
+<h2 id="strings">Strings</h2>
+<p>Python expressions can also included quoted strings. Enter one in the Python shell:</p>
+<pre><code>&gt;&gt;&gt; &quot;hello&quot;
+&quot;hello&quot;</code></pre>
+<p>Your expression was evaluated to a string value (or a <em>string literal</em>, as they're usually called), so the shell returned it as the result.</p>
+<p>Now let's use the <code>print</code> command with a string and see what happens:</p>
+<pre><code>&gt;&gt;&gt; print &quot;hello&quot;
+hello</code></pre>
+<p>Your string is printed again, but notice this time it is not in quotes. That's because it wasn't returned as the result of your expression (print statements have no result to return). Instead, when the print statement was evaluated it's primary action was to display your string on the screen.</p>
+<div class="exercises">
+<ol start="3" style="list-style-type: decimal">
+<li>Have the computer greet you personally using the Python shell.</li>
+<li>Have the computer insult you (or someone else) using the Python shell.</li>
+</ol>
+</div>
+<h2 id="manipulating-strings">Manipulating Strings</h2>
+<p>Python can manipulate strings with some of the math operators. Try these:</p>
+<pre><code>&gt;&gt;&gt; &quot;hello&quot; + &quot;world&quot;
+&quot;helloworld&quot;
+&gt;&gt;&gt; &quot;spam &quot; * 3
+&quot;spam spam spam &quot;</code></pre>
+<p>When you add or multiply strings together it's called <em>concatenation</em>.</p>
+<p>Python strings also have functions you can call to manipulate them. Let's see what some of them do:</p>
+<pre><code>&gt;&gt;&gt; &quot;hello world&quot;.capitalize()
+&quot;Hello world&quot;
+&gt;&gt;&gt; &quot;hello world&quot;.title()
+&quot;Hello World&quot;
+&gt;&gt;&gt; &quot;hello world&quot;.islower()
+True
+&gt;&gt;&gt; &quot;Hello World&quot;.islower()
+False
+&gt;&gt;&gt; &quot;Hello World&quot;.swapcase()
+&quot;hELLO wORLD&quot;</code></pre>
+<p>There are many more string functions listed <a href="https://docs.python.org/2/library/stdtypes.html#string-methods">in the Python documentation</a>. Look them over and try a few out.</p>
+<div class="exercises">
+<ol start="5" style="list-style-type: decimal">
+<li>Start with the strings &quot;de&quot; and “ed”, and print out &quot;deed deed deed deed deed &quot;.</li>
+<li>Write a statement to replace &quot;Hello&quot; with &quot;Bonjour&quot; in the string &quot;Hello World&quot;. There is a function in the Python documentation linked above that will help with this.</li>
+<li>What happens if you try print(&quot;forgot the close the string) and press enter?. How do you continue?</li>
+</ol>
+</div>
+<h2 id="square-brackets">Square Brackets</h2>
+<p>If you want to get a character in a certain position in a string, you can use square brackets.</p>
+<pre><code>&gt;&gt;&gt; &quot;Hello World&quot;[0]
+&quot;H&quot;
+&gt;&gt;&gt; &quot;Hello World&quot;[-1]
+&quot;d&quot;
+&gt;&gt;&gt; &quot;Hello World&quot;[1:7]
+&quot;ello W&quot;
+&gt;&gt;&gt; &quot;Hello World&quot;[1:9999999]
+&quot;ello World&quot;
+&gt;&gt;&gt; &quot;Hello World&quot;[1:]
+&quot;ello World&quot;
+&gt;&gt;&gt; &quot;Hello World&quot;[1:-1]
+&quot;ello Worl&quot;
+&gt;&gt;&gt; &quot;Hello World&quot;[0:-1:2]</code></pre>
+<p>If you imagine a number above each character in a string, you can access a character or set of characters through the square brackets using the associated numbers. The numbers are called the index, and accessing the string through the square brackets is called <em>indexing</em>.</p>
+<div class="exercises">
+<ol start="8" style="list-style-type: decimal">
+<li>Return only the 3rd character in a string. (Remember that indexes begin with zero.)</li>
+<li>What does <code>&quot;string&quot;[0:0]</code> return?</li>
+<li>What about <code>&quot;string&quot;[0:]</code>, <code>“string”[::-1]</code> or <code>&quot;string&quot;[:]</code>?</li>
+<li>Try <code>“string”[0:-1:2]</code>.</li>
+<li>How would you get every third letter in a string?</li>
+</ol>
+</div>
+<h2 id="variables">Variables</h2>
+<p>Python can store a value and associate it with a name so you can use it later in your program. This is called a variable. <strong><em>This needs work</em></strong>.</p>
+<pre><code>&gt;&gt;&gt; name = &quot;Chewbacca&quot;
+&gt;&gt;&gt; print(name)
+Chewbacca
+&gt;&gt;&gt; print(name.swapcase())
+cHEWBACCA
+&gt;&gt;&gt; print(name)
+Chewbacca
+# Notice that the variable was unchanged by the previous
+# command. What would you have to do to make the value of the
+# variable change to the swapcase() value?
+&gt;&gt;&gt; letters = len(name)
+&gt;&gt;&gt; print(letters)
+9</code></pre>
+</div>
+</body>
+</html>
