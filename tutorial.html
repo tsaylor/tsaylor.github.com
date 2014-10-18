@@ -12,12 +12,18 @@
 <div class="content">
 <h1 id="python-in-interactive-mode">Python in Interactive Mode</h1>
 <h2 id="open-your-computers-command-line-interface">Open your computer's command line interface</h2>
-<h3 id="windows">Windows</h3>
+<div class="two_col">
+<div class="left_col">
+<h3>Windows</h3>
 <p>Open the run dialog (Windows key + r) and run the command &quot;cmd&quot;. A window will open with a prompt like this:</p>
 <pre><code>C:\&gt;</code></pre>
-<h3 id="mac">Mac</h3>
+</div>
+<div class="left_col">
+<h3>Mac</h3>
 <p>From the spotlight, search for &quot;terminal&quot; and run the application. A window will open with a prompt something like this:</p>
 <pre><code>username@computername:~$</code></pre>
+</div>
+</div>
 <p>This is the <em>system shell</em>. You will use this to run the Python interactive interpreter and Python programs. In this document, we will represent commands intended to be run in the system shell with the <code>$</code> character, like so:</p>
 <pre><code>$ &lt;command to be run&gt;</code></pre>
 <h2 id="open-the-python-interactive-shell">Open the Python interactive shell</h2>
@@ -83,7 +89,7 @@ False
 <p>There are many more string functions listed <a href="https://docs.python.org/2/library/stdtypes.html#string-methods">in the Python documentation</a>. Look them over and try a few out.</p>
 <div class="exercises">
 <ol start="5" style="list-style-type: decimal">
-<li>Start with the strings &quot;de&quot; and “ed”, and print out &quot;deed deed deed deed deed &quot;.</li>
+<li>Start with the strings &quot;de&quot; and &quot;ed&quot;, and print out &quot;deed deed deed deed deed &quot;.</li>
 <li>Write a statement to replace &quot;Hello&quot; with &quot;Bonjour&quot; in the string &quot;Hello World&quot;. There is a function in the Python documentation linked above that will help with this.</li>
 <li>What happens if you try print(&quot;forgot the close the string) and press enter?. How do you continue?</li>
 </ol>
@@ -108,16 +114,19 @@ False
 <ol start="8" style="list-style-type: decimal">
 <li>Return only the 3rd character in a string. (Remember that indexes begin with zero.)</li>
 <li>What does <code>&quot;string&quot;[0:0]</code> return?</li>
-<li>What about <code>&quot;string&quot;[0:]</code>, <code>“string”[::-1]</code> or <code>&quot;string&quot;[:]</code>?</li>
-<li>Try <code>“string”[0:-1:2]</code>.</li>
+<li>What about <code>&quot;string&quot;[0:]</code>, <code>&quot;string&quot;[::-1]</code> or <code>&quot;string&quot;[:]</code>?</li>
+<li>Try <code>&quot;string&quot;[0:-1:2]</code>.</li>
 <li>How would you get every third letter in a string?</li>
 </ol>
 </div>
 <h2 id="variables">Variables</h2>
-<p>Python can store a value and associate it with a name so you can use it later in your program. This is called a variable. <strong><em>This needs work</em></strong>.</p>
+<p>Python can store a value and name it so you can use it later in your program. This is called a <em>variable</em>.</p>
 <pre><code>&gt;&gt;&gt; name = &quot;Chewbacca&quot;
 &gt;&gt;&gt; print(name)
 Chewbacca
+
+
+
 &gt;&gt;&gt; print(name.swapcase())
 cHEWBACCA
 &gt;&gt;&gt; print(name)
