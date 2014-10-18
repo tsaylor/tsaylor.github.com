@@ -1,38 +1,62 @@
 body {
     font-family: Georgia, "Times New Roman";
-    font-size: 1em;
+    font-size: 1.17em;
     color: #333;
     background-color: #333;
     padding: 0;
     margin: 0;
 }
 
-.content {
+.container {
     width: 990px;
     margin: auto;
     background-color: #ffffec;
     padding: 1em;
 }
 
+p {
+    margin-bottom: 0;
+}
+
 code {
     font-family: Courier;
-    font-size: .9em;
+}
+
+.file, pre {
+    font-family: Courier;
+    margin: 1em 26px 0 26px;
+    background-color: #ddd;
+    display: inline-block;
+    min-width: 50%;
+    box-sizing: border-box;
 }
 
 pre {
-    margin: 0 26px 0 26px;
     padding: 1em;
-    background-color: #ddd;
-    display: inline-block;
-    min-width: 40%;
+}
+
+.file pre {
+    margin: 0;
+    padding: 0;
+}
+
+.name {
+    padding: .25em 1em 0 1em;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    display: block;
+}
+
+.content {
+    padding: 1em;
 }
 
 h3 {
-    font-size: 1em;
+
 }
 
 .exercises {
-    margin: 0 26px 0 26px;
+    margin: 1em 26px 0 26px;
     padding: 1em 1em 0 0;
     background-color: #bbf;
     border-radius: 1em;
@@ -43,7 +67,11 @@ h3 {
 .exercises::before {
     font-weight: bold;
     content: "Exercises";
-    margin-left: 1em;
+    margin-left: 2.5em;
+}
+
+ol {
+    padding-left: 2.5em;
 }
 
 .left_col {
