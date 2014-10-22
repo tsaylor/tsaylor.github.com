@@ -10,11 +10,12 @@
 </head>
 <body>
 <div class="container">
-<h1 id="python-in-interactive-mode">Python in Interactive Mode</h1>
+<h1 id="introduction-to-python">Introduction to Python</h1>
 <ul>
 <li>about this document</li>
 <li>you will need</li>
 </ul>
+<h1 id="python-in-interactive-mode">Python in Interactive Mode</h1>
 <h2 id="open-your-computers-command-line-interface">Open your computer's command line interface</h2>
 <div class="two_col">
 <div class="left_col">
@@ -90,7 +91,9 @@ True
 False
 &gt;&gt;&gt; &quot;Hello World&quot;.swapcase()
 &quot;hELLO wORLD&quot;</code></pre>
-<p>There are many more string functions listed <a href="https://docs.python.org/2/library/stdtypes.html#string-methods">in the Python documentation</a>. Look them over and try a few out.</p>
+<p>There are many more string functions listed <a href="https://docs.python.org/2/library/stdtypes.html#string-methods">in the Python documentation</a>. Look them over and try a few out. Also try using the built-in len() function on a string. It returns the length of the given string.</p>
+<pre><code>&gt;&gt;&gt; len(&quot;hello&quot;)
+5</code></pre>
 <div class="exercises">
 <ol start="5" style="list-style-type: decimal">
 <li>Start with the strings &quot;de&quot; and &quot;ed&quot;, and print out &quot;deed deed deed deed deed &quot;.</li>
@@ -196,14 +199,14 @@ oldmcdonald.py
 </div>
 <div class="content">
 <pre><code># Sing Old McDonald
-print(&quot;Old McDonald had a farm&quot;)
-print(&quot;Ee i ee i oh&quot;)
-print(&quot;And on his farm he had some chickens&quot;)
-print(&quot;Ee i ee i oh&quot;)
-print(&quot;With a cluck cluck here&quot;)
-print(&quot;And a cluck cluck there&quot;)
-print(&quot;Old McDonald had a farm&quot;)
-print(&quot;Ee i ee i oh&quot;)</code></pre>
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;
+print &quot;And on his farm he had some chickens&quot;
+print &quot;Ee i ee i oh&quot;
+print &quot;With a cluck cluck here&quot;
+print &quot;And a cluck cluck there&quot;
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;</code></pre>
 </div>
 </div>
 <p>Let's modify the program to use variables for the animal and the sound it makes.</p>
@@ -215,14 +218,14 @@ oldmcdonald.py
 <pre><code># Sing Old McDonald
 animals = &quot;cows&quot;
 noise = &quot;moo moo&quot;
-print(&quot;Old McDonald had a farm&quot;)
-print(&quot;Ee i ee i oh&quot;)
-print(&quot;And on his farm he had some &quot; + animals)
-print(&quot;Ee i ee i oh&quot;)
-print(&quot;With a &quot; + noise + &quot; here&quot;)
-print(&quot;And a &quot; + noise + &quot; there&quot;)
-print(&quot;Old McDonald had a farm&quot;)
-print(&quot;Ee i ee i oh&quot;)</code></pre>
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;
+print &quot;And on his farm he had some &quot; + animals
+print &quot;Ee i ee i oh&quot;
+print &quot;With a &quot; + noise + &quot; here&quot;
+print &quot;And a &quot; + noise + &quot; there&quot;
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;</code></pre>
 </div>
 </div>
 <div class="exercises">
@@ -234,27 +237,30 @@ print(&quot;Ee i ee i oh&quot;)</code></pre>
 </div>
 <h1 id="lists">Lists</h1>
 <p>In addition to having data types that store one piece of information. Python has data types which store a multiple items.</p>
-<pre><code>&gt;&gt;&gt; list = [ 3, 4, 5 ]</code></pre>
-<p>Remember from strings last week:</p>
+<pre><code>&gt;&gt;&gt; letters = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
+<p>The indexing syntax we used on strings also works with lists:</p>
 <pre><code>&gt;&gt;&gt; s = &quot;some string&quot;
-&gt;&gt;&gt;s[0]
-&#39;s&#39;</code></pre>
-<p>Similarly you can get an element of an list, or find the length of the list:</p>
-<pre><code>&gt;&gt;&gt; letters = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
-&gt;&gt;&gt; letters[0]
-&#39;a&#39;
-&gt;&gt;&gt; len(letters)
+&gt;&gt;&gt; s[1]
+&#39;o&#39;
+&gt;&gt;&gt; s[1:2]
+&#39;om&#39;
+&gt;&gt;&gt; letters[1]
+&#39;b&#39;
+&gt;&gt;&gt; letters[1:2]
+[&#39;b&#39;, &#39;c&#39;]</code></pre>
+<p>You can get the length of a list using the len() function like you can with a string:</p>
+<pre><code>&gt;&gt;&gt; len(letters)
 3</code></pre>
 <p>You can do other things to lists as well:</p>
 <p>Add an element</p>
 <pre><code>&gt;&gt;&gt; letters.append(&quot;z&quot;)
-&gt;&gt;&gt; print(letters)
-[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;z&quot;]</code></pre>
+&gt;&gt;&gt; print letters
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;z&#39;]</code></pre>
 <p>Remove an element</p>
 <pre><code>&gt;&gt;&gt; letters.remove(&quot;z&quot;)
 &gt;&gt;&gt; print(letters)
-[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</code></pre>
-<p>Test to see if an element is in the lis</p>
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
+<p>Test to see if an element is in the list</p>
 <pre><code>&gt;&gt;&gt; &quot;a&quot; in letters
 True
 &gt;&gt; &quot;w&quot; in letters
@@ -265,7 +271,7 @@ False</code></pre>
 &gt;&gt;&gt; mixed_list = [5, &quot;words&quot;, False]
 &gt;&gt;&gt; nested_list = [5, [&quot;words&quot;, False]]</code></pre>
 <div class="exercises">
-<ol start="22" style="list-style-type: decimal">
+<ol start="20" style="list-style-type: decimal">
 <li>Try creating a list of lists. What is the length of this list? What happens if you try to print it?<br /></li>
 <li>How would you find the length of first list in your list?</li>
 </ol>
