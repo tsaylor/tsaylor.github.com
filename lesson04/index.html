@@ -111,21 +111,42 @@
 </head>
 <body>
 <div class="container">
-<h1>Introduction to Python</h1>
-<h2>Lessons</h2>
-<ol style="list-style-type: decimal">
-<li><a href="/lesson01/index.html"> Python in Interactive Mode</a></li>
-<li><a href="/lesson02/index.html"> Integers</a></li>
-<li><a href="/lesson03/index.html"> Strings</a></li>
-<li><a href="/lesson04/index.html"> Manipulating Strings</a></li>
-<li><a href="/lesson05/index.html"> Square Brackets</a></li>
-<li><a href="/lesson06/index.html"> Variables</a></li>
-<li><a href="/lesson07/index.html"> Data Types</a></li>
-<li><a href="/lesson08/index.html"> Input</a></li>
-<li><a href="/lesson09/index.html"> Saving Programs</a></li>
-<li><a href="/lesson10/index.html"> Lists</a></li>
+
+<div id="index">
+<a href="/lesson03/index.html">3. Strings</a> | 
+<a href="/index.html">All lessons</a>
+| <a href="/lesson05/index.html">5. Square Brackets</a>
+</div>
+
+
+<h1 id="manipulating-strings">Manipulating Strings</h1>
+<p>Python can manipulate strings with some of the math operators. Try these:</p>
+<pre><code>&gt;&gt;&gt; &quot;hello&quot; + &quot;world&quot;
+&quot;helloworld&quot;
+&gt;&gt;&gt; &quot;spam &quot; * 3
+&quot;spam spam spam &quot;</code></pre>
+<p>When you add or multiply strings together it's called <em>concatenation</em>.</p>
+<p>Python strings also have functions you can call to manipulate them. Let's see what some of them do:</p>
+<pre><code>&gt;&gt;&gt; &quot;hello world&quot;.capitalize()
+&quot;Hello world&quot;
+&gt;&gt;&gt; &quot;hello world&quot;.title()
+&quot;Hello World&quot;
+&gt;&gt;&gt; &quot;hello world&quot;.islower()
+True
+&gt;&gt;&gt; &quot;Hello World&quot;.islower()
+False
+&gt;&gt;&gt; &quot;Hello World&quot;.swapcase()
+&quot;hELLO wORLD&quot;</code></pre>
+<p>There are many more string functions listed <a href="https://docs.python.org/2/library/stdtypes.html#string-methods">in the Python documentation</a>. Look them over and try a few out. Also try using the built-in len() function on a string. It returns the length of the given string.</p>
+<pre><code>&gt;&gt;&gt; len(&quot;hello&quot;)
+5</code></pre>
+<div class="exercises">
+<ol start="5" style="list-style-type: decimal">
+<li>Start with the strings &quot;de&quot; and &quot;ed&quot;, and print out &quot;deed deed deed deed deed &quot;.</li>
+<li>Write a statement to replace &quot;Hello&quot; with &quot;Bonjour&quot; in the string &quot;Hello World&quot;. There is a function in the Python documentation linked above that will help with this.</li>
+<li>What happens if you try <code>print &quot;forgot the close the string</code> and press enter?. How do you continue?</li>
 </ol>
-<p>More to come...</p>
+</div>
 </div>
 </body>
 </html>

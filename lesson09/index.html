@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <!--link rel="stylesheet" type="text/css" href="tutorial.css"-->
+  <style type="text/css">code{white-space: pre;}</style>
+
+  <style type="text/css">
+    body {
+        font-family: Georgia, "Times New Roman";
+        font-size: 1.17em;
+        color: #333;
+        background-color: #333;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 990px;
+        margin: auto;
+        background-color: #ffffec;
+        padding: 1em;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    code {
+        font-family: Courier;
+    }
+
+    .file, pre {
+        font-family: Courier;
+        margin: 1em 26px 0 26px;
+        background-color: #ddd;
+        display: inline-block;
+        min-width: 50%;
+        box-sizing: border-box;
+    }
+
+    pre {
+        padding: 1em;
+    }
+
+    .file pre {
+        margin: 0;
+        padding: 0;
+    }
+
+    .name {
+        padding: .25em 1em 0 1em;
+        font-weight: bold;
+        border-bottom: 2px solid black;
+        display: block;
+    }
+
+    .content {
+        padding: 1em;
+    }
+
+    h3 {
+
+    }
+
+    .exercises {
+        margin: 1em 26px 0 26px;
+        padding: 1em 1em 0 0;
+        background-color: #bbf;
+        border-radius: 1em;
+        display: inline-block;
+        min-width: 40%;
+    }
+
+    .exercises::before {
+        font-weight: bold;
+        content: "Exercises";
+        margin-left: 2.5em;
+    }
+
+    ol {
+        padding-left: 2.5em;
+    }
+
+    .left_col {
+        float:left;
+        width:49%;
+        margin: 0 1% 1em 0;
+    }
+
+    .right_col {
+        float:right;
+        width:49%;
+        margin: 0 0 1em 1%;
+    }
+
+    dt {
+        font-weight: bold;
+        width: 20%;
+        display: inline-block;
+    }
+
+    dd {
+        display: inline-block;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+
+<div id="index">
+<a href="/lesson08/index.html">8. Input</a> | 
+<a href="/index.html">All lessons</a>
+| <a href="/lesson10/index.html">10. Lists</a>
+</div>
+
+
+<h1 id="saving-programs">Saving Programs</h1>
+<p>As your programs get longer you'll want to save them, so we’ll move to a text editor. Save the following program as &quot;hello.py&quot; in your text editor of choice.</p>
+<div class="file">
+<div class="name">
+hello.py
+</div>
+<div class="content">
+<pre><code>name = raw_input(&quot;What is your name?\n&quot;)
+print &quot;Nice to meet you &quot; + name</code></pre>
+</div>
+</div>
+<p>In the system shell, move to the folder where you saved hello.py with the <code>cd &lt;folder name&gt;</code> command. Run your python program with <code>python hello.py</code>.</p>
+<pre><code>$ cd my_programs
+$ python hello.py
+What is your name?
+&lt;type in your name&gt;
+&quot;Hi &lt;your name&gt;&quot;
+$</code></pre>
+<p>Try writing a longer program and running it.</p>
+<div class="file">
+<div class="name">
+oldmcdonald.py
+</div>
+<div class="content">
+<pre><code># Sing Old McDonald
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;
+print &quot;And on his farm he had some chickens&quot;
+print &quot;Ee i ee i oh&quot;
+print &quot;With a cluck cluck here&quot;
+print &quot;And a cluck cluck there&quot;
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;</code></pre>
+</div>
+</div>
+<p>Let's modify the program to use variables for the animal and the sound it makes.</p>
+<div class="file">
+<div class="name">
+oldmcdonald.py
+</div>
+<div class="content">
+<pre><code># Sing Old McDonald
+animals = &quot;cows&quot;
+noise = &quot;moo moo&quot;
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;
+print &quot;And on his farm he had some &quot; + animals
+print &quot;Ee i ee i oh&quot;
+print &quot;With a &quot; + noise + &quot; here&quot;
+print &quot;And a &quot; + noise + &quot; there&quot;
+print &quot;Old McDonald had a farm&quot;
+print &quot;Ee i ee i oh&quot;</code></pre>
+</div>
+</div>
+<div class="exercises">
+<ol start="17" style="list-style-type: decimal">
+<li>Get this program to ask for a person’s favorite animal (in the plural), and the noise the animal makes, and then sing them Old McDonald.</li>
+<li>Rename the animals variable in your program to fauna. What error do you get if you forget to change all the occurrences of the variable?</li>
+<li>What are alternate ways to write this program. Could you use the escaped new line (\n)? Could you store other repeated parts as variables?</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

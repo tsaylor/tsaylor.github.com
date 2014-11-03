@@ -111,21 +111,41 @@
 </head>
 <body>
 <div class="container">
-<h1>Introduction to Python</h1>
-<h2>Lessons</h2>
-<ol style="list-style-type: decimal">
-<li><a href="/lesson01/index.html"> Python in Interactive Mode</a></li>
-<li><a href="/lesson02/index.html"> Integers</a></li>
-<li><a href="/lesson03/index.html"> Strings</a></li>
-<li><a href="/lesson04/index.html"> Manipulating Strings</a></li>
-<li><a href="/lesson05/index.html"> Square Brackets</a></li>
-<li><a href="/lesson06/index.html"> Variables</a></li>
-<li><a href="/lesson07/index.html"> Data Types</a></li>
-<li><a href="/lesson08/index.html"> Input</a></li>
-<li><a href="/lesson09/index.html"> Saving Programs</a></li>
-<li><a href="/lesson10/index.html"> Lists</a></li>
+
+<div id="index">
+<a href="/lesson05/index.html">5. Square Brackets</a> | 
+<a href="/index.html">All lessons</a>
+| <a href="/lesson07/index.html">7. Data Types</a>
+</div>
+
+
+<h1 id="variables">Variables</h1>
+<p>Python can store a value and name it so you can use it later in your program. This is called a <em>variable</em>. Any type of value can be assigned to a variable with the <code>=</code> operator.</p>
+<pre><code>&gt;&gt;&gt; number = 7
+&gt;&gt;&gt; print number
+7
+&gt;&gt;&gt; name = &quot;Chewbacca&quot;
+&gt;&gt;&gt; print name
+Chewbacca</code></pre>
+<p>Variables can be used in the same ways as the values we were using before.</p>
+<pre><code>&gt;&gt;&gt; name + &#39; and Han&#39;
+&#39;Chewbacca and Han&#39;
+&gt;&gt;&gt; name.swapcase()
+&#39;cHEWBACCA&#39;
+&gt;&gt;&gt; print name
+Chewbacca</code></pre>
+<p>Notice that the variable was unchanged by the previous commands. To replace the value of the variable with the value returned from <code>.swapcase()</code>, you would have to assign that value back to the variable, like this:</p>
+<pre><code>&gt;&gt;&gt; name = name.swapcase()
+&gt;&gt;&gt; print name
+&#39;cHEWBACCA&#39;</code></pre>
+<div class="exercises">
+<ol start="13" style="list-style-type: decimal">
+<li>Assign your own name to the variable &quot;name&quot;</li>
+<li>Have the computer greet you personally using the variable &quot;name&quot;</li>
+<li>The Washington Monument opened in 1885. Assign that year to a variable and the current year to another variable. Use them to calculate how long it's been open.</li>
+<li>Call the .swapcase() method on &quot;name&quot;</li>
 </ol>
-<p>More to come...</p>
+</div>
 </div>
 </body>
 </html>

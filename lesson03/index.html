@@ -111,21 +111,29 @@
 </head>
 <body>
 <div class="container">
-<h1>Introduction to Python</h1>
-<h2>Lessons</h2>
-<ol style="list-style-type: decimal">
-<li><a href="/lesson01/index.html"> Python in Interactive Mode</a></li>
-<li><a href="/lesson02/index.html"> Integers</a></li>
-<li><a href="/lesson03/index.html"> Strings</a></li>
-<li><a href="/lesson04/index.html"> Manipulating Strings</a></li>
-<li><a href="/lesson05/index.html"> Square Brackets</a></li>
-<li><a href="/lesson06/index.html"> Variables</a></li>
-<li><a href="/lesson07/index.html"> Data Types</a></li>
-<li><a href="/lesson08/index.html"> Input</a></li>
-<li><a href="/lesson09/index.html"> Saving Programs</a></li>
-<li><a href="/lesson10/index.html"> Lists</a></li>
+
+<div id="index">
+<a href="/lesson02/index.html">2. Integers</a> | 
+<a href="/index.html">All lessons</a>
+| <a href="/lesson04/index.html">4. Manipulating Strings</a>
+</div>
+
+
+<h1 id="strings">Strings</h1>
+<p>Python expressions can also included quoted strings. Enter one in the Python shell:</p>
+<pre><code>&gt;&gt;&gt; &quot;hello&quot;
+&quot;hello&quot;</code></pre>
+<p>Your expression was evaluated to a string value (or a <em>string literal</em>, as they're usually called), so the shell returned it as the result.</p>
+<p>Now let's use the <code>print</code> command with a string and see what happens:</p>
+<pre><code>&gt;&gt;&gt; print &quot;hello&quot;
+hello</code></pre>
+<p>Your string is printed again, but notice this time it is not in quotes. That's because it wasn't returned as the result of your expression (print statements have no result to return). Instead, when the print statement was evaluated it's primary action was to display your string on the screen.</p>
+<div class="exercises">
+<ol start="3" style="list-style-type: decimal">
+<li>Have the computer greet you personally using the Python shell.</li>
+<li>Have the computer insult you (or someone else) using the Python shell.</li>
 </ol>
-<p>More to come...</p>
+</div>
 </div>
 </body>
 </html>
