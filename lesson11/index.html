@@ -111,29 +111,35 @@
 </head>
 <body>
 <div class="container">
-<h1>Introduction to Python</h1>
-<h2>Lessons</h2>
+
+<div id="index">
+<a href="/lesson10/index.html">10. Lists</a> | 
+<a href="/index.html">All lessons</a>
+| <a href="/lesson12/index.html">12. Comparison Operators and Booleans</a>
+</div>
+
+
+<h1 id="functions">Functions</h1>
+<p>Sometimes it’s useful to re-use code in multiple places. This can be done by writing and calling a function. Where a function's code begins and ends is defined by indentation, so take care to make it consistent! (Using four spaces is the preferred way to indent. Your text editor can be set to do that when you press the tab key.)</p>
+<p>Write a function that will sing birthday song:</p>
+<pre><code>&gt;&gt;&gt; def sing_happy_birthday(name):
+...     happy = &quot;Happy Birthday to &quot;
+...     print happy + &quot;you&quot;
+...     print happy + &quot;you&quot;
+...     print happy + name
+...     print happy + &quot;you&quot;
+...
+&gt;&gt;&gt; sing_happy_birthday(&quot;Molly&quot;)</code></pre>
+<div class="exercises">
 <ol style="list-style-type: decimal">
-<li><a href="/lesson01/index.html"> Python in Interactive Mode</a></li>
-<li><a href="/lesson02/index.html"> Integers</a></li>
-<li><a href="/lesson03/index.html"> Strings</a></li>
-<li><a href="/lesson04/index.html"> Manipulating Strings</a></li>
-<li><a href="/lesson05/index.html"> Square Brackets</a></li>
-<li><a href="/lesson06/index.html"> Variables</a></li>
-<li><a href="/lesson07/index.html"> Data Types</a></li>
-<li><a href="/lesson08/index.html"> Input</a></li>
-<li><a href="/lesson09/index.html"> Saving Programs</a></li>
-<li><a href="/lesson10/index.html"> Lists</a></li>
-<li><a href="/lesson11/index.html"> Functions</a></li>
-<li><a href="/lesson12/index.html"> Comparison Operators and Booleans</a></li>
-<li><a href="/lesson13/index.html"> Loops</a></li>
-<li><a href="/lesson14/index.html"> Conditionals</a></li>
-<li><a href="/lesson15/index.html"> Dictionaries</a></li>
-<li><a href="/lesson16/index.html"> Loops and Dictionaries</a></li>
-<li><a href="/lesson17/index.html"> Introduction to the Python Standard Library</a></li>
-<li><a href="/lesson18/index.html"> Reading and Writing from Files</a></li>
-<li><a href="/lesson19/index.html"> Processing Data After Reading</a></li>
+<li>Write a function called <code>mysum()</code> that takes in two numbers and returns their sum. [BONUS] What happens when you give this function two strings or two lists?</li>
+<li>Write a function called <code>first()</code> that returns the first letter of a string. What happens when you pass the function the empty string (&quot;&quot;)?</li>
+<li>Write a function that takes a word and prints out the word five times.</li>
+<li>Write a function that takes a string, word and a number repeats and prints out word repeats times with a space between each time word comes out. (Hint: You probably will print out one more space than you will need. As a bonus, see if you can figure out a way to avoid that.)</li>
+<li>Write some code that calls that function, and asks for user input to select the word.</li>
+<li>Write a function that takes a temperature and converts it from Fahrenheit to Celsius. (Hint: C = 5/9 (F-32))</li>
 </ol>
+</div>
 </div>
 </body>
 </html>

@@ -113,53 +113,32 @@
 <div class="container">
 
 <div id="index">
-<a href="/lesson09/index.html">9. Saving Programs</a> | 
+<a href="/lesson17/index.html">17. Introduction to the Python Standard Library</a> | 
 <a href="/index.html">All lessons</a>
-| <a href="/lesson11/index.html">11. Functions</a>
+| <a href="/lesson19/index.html">19. Processing Data After Reading</a>
 </div>
 
 
-<h1 id="lists">Lists</h1>
-<p>In addition to having data types that store one piece of information. Python has data types which store a multiple items.</p>
-<pre><code>&gt;&gt;&gt; letters = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
-<p>The indexing syntax we used on strings also works with lists:</p>
-<pre><code>&gt;&gt;&gt; s = &quot;some string&quot;
-&gt;&gt;&gt; s[1]
-&#39;o&#39;
-&gt;&gt;&gt; s[1:3]
-&#39;om&#39;
-&gt;&gt;&gt; letters[1]
-&#39;b&#39;
-&gt;&gt;&gt; letters[1:3]
-[&#39;b&#39;, &#39;c&#39;]</code></pre>
-<p>You can get the length of a list using the len() function like you can with a string:</p>
-<pre><code>&gt;&gt;&gt; len(letters)
-3</code></pre>
-<p>You can do other things to lists as well:</p>
-<p>Add an element</p>
-<pre><code>&gt;&gt;&gt; letters.append(&quot;z&quot;)
-&gt;&gt;&gt; print letters
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;z&#39;]</code></pre>
-<p>Remove an element</p>
-<pre><code>&gt;&gt;&gt; letters.remove(&quot;z&quot;)
-&gt;&gt;&gt; print letters
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code></pre>
-<p>Test to see if an element is in the list</p>
-<pre><code>&gt;&gt;&gt; &quot;a&quot; in letters
-True
-&gt;&gt; &quot;w&quot; in letters
-False</code></pre>
-<p>You can use lists to store anything you’d like:</p>
-<pre><code>&gt;&gt;&gt; string_list = [&quot;tomatoes&quot;, &quot;cheese&quot;, &quot;milk&quot;]
-&gt;&gt;&gt; boolean_list = [True, True, False]
-&gt;&gt;&gt; mixed_list = [5, &quot;words&quot;, False]
-&gt;&gt;&gt; nested_list = [5, [&quot;words&quot;, False]]</code></pre>
-<div class="exercises">
-<ol start="20" style="list-style-type: decimal">
-<li>Try creating a list of lists. What is the length of this list? What happens if you try to print it?<br /></li>
-<li>How would you find the length of first list in your list?</li>
-</ol>
-</div>
+<h1 id="reading-and-writing-from-files">Reading and Writing from Files</h1>
+<p>We can read and write to files from python. This is the code for opening a new file:</p>
+<pre><code>&gt;&gt;&gt; fid = open(&quot;/path/filename.txt&quot;, &quot;w&quot;)</code></pre>
+<p>Where <code>path</code> is the path to some directory on your computer. The second argument, <code>&quot;w&quot;</code>, tells Python to open this file and let us write in it. Try:</p>
+<pre><code>&gt;&gt;&gt; print fid</code></pre>
+<p>That's python's internal representation of your file, usually called a <em>file handle</em>. It's an object just like everything else, so it has functions we can call like <code>.write()</code>, which writes a string into the file. Try that now:</p>
+<pre><code>&gt;&gt;&gt; fid.write(&quot;blah blah blah there is content in this file.\n”)
+&gt;&gt;&gt; fid.write(“This is the second line of the file.\n&quot;) #  \n creates a new line.</code></pre>
+<p>Always close the file handle when you are done working with it:</p>
+<pre><code>&gt;&gt;&gt; fid.close()</code></pre>
+<p>Now find the file on your computer and open it in a text editor or word processor. Is the text you just wrote there? Close the file before continuing.</p>
+<p>Open the same file for reading by using an <code>&quot;r&quot;</code> for the second argument:</p>
+<pre><code>&gt;&gt;&gt; fid = open(&quot;/path/filename.txt&quot;, &quot;r&quot;)
+&gt;&gt;&gt; fid.read()</code></pre>
+<p>The whole content of the file is returned, and could be saved in a variable for processing. Also note that a file handle keeps track of how much of the file has been read and won't read it twice. If you try to read it again, you get an empty string.</p>
+<pre><code>&gt;&gt;&gt; fid.read()
+&#39;&#39;</code></pre>
+<p>If you want to read the file again, you'll have to reset the file handle's internal pointer using the <code>.seek()</code> method:</p>
+<pre><code>&gt;&gt;&gt; fid.seek(0)  # the 0 tells the file handle to start at the first character
+&gt;&gt;&gt; fid.read()</code></pre>
 </div>
 </body>
 </html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <!--link rel="stylesheet" type="text/css" href="tutorial.css"-->
+  <style type="text/css">code{white-space: pre;}</style>
+
+  <style type="text/css">
+    body {
+        font-family: Georgia, "Times New Roman";
+        font-size: 1.17em;
+        color: #333;
+        background-color: #333;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 990px;
+        margin: auto;
+        background-color: #ffffec;
+        padding: 1em;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    code {
+        font-family: Courier;
+    }
+
+    .file, pre {
+        font-family: Courier;
+        margin: 1em 26px 0 26px;
+        background-color: #ddd;
+        display: inline-block;
+        min-width: 50%;
+        box-sizing: border-box;
+    }
+
+    pre {
+        padding: 1em;
+    }
+
+    .file pre {
+        margin: 0;
+        padding: 0;
+    }
+
+    .name {
+        padding: .25em 1em 0 1em;
+        font-weight: bold;
+        border-bottom: 2px solid black;
+        display: block;
+    }
+
+    .content {
+        padding: 1em;
+    }
+
+    h3 {
+
+    }
+
+    .exercises {
+        margin: 1em 26px 0 26px;
+        padding: 1em 1em 0 0;
+        background-color: #bbf;
+        border-radius: 1em;
+        display: inline-block;
+        min-width: 40%;
+    }
+
+    .exercises::before {
+        font-weight: bold;
+        content: "Exercises";
+        margin-left: 2.5em;
+    }
+
+    ol {
+        padding-left: 2.5em;
+    }
+
+    .left_col {
+        float:left;
+        width:49%;
+        margin: 0 1% 1em 0;
+    }
+
+    .right_col {
+        float:right;
+        width:49%;
+        margin: 0 0 1em 1%;
+    }
+
+    dt {
+        font-weight: bold;
+        width: 20%;
+        display: inline-block;
+    }
+
+    dd {
+        display: inline-block;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+
+<div id="index">
+<a href="/lesson18/index.html">18. Reading and Writing from Files</a> | 
+<a href="/index.html">All lessons</a>
+</div>
+
+
+<h1 id="processing-data-after-reading">Processing Data After Reading</h1>
+<p>Open your file from before for reading and call <code>.readlines()</code> on it to get a list of lines in the file.</p>
+<pre><code>&gt;&gt;&gt; data = fid.readlines()
+&gt;&gt;&gt; print data
+[&#39;blah blah blah there is content in this file.\n&#39;, &#39;This is the second 
+line of the file.\n&#39;]</code></pre>
+<p>It's common to loop over the lines of a file and do something with each one.</p>
+<pre><code>&gt;&gt;&gt; for line in data:
+...     print line
+...
+blah blah blah there is content in this file.
+
+This is the second line of the file.</code></pre>
+<p>Notice that it printed the <code>\n</code> as a new line, and then included another new line like the print statement normally does.</p>
+<p>We can call <code>.split()</code> on each line to turn it into a list of words. By default, <code>.split()</code> separates the line on any whitespace character.</p>
+<pre><code>&gt;&gt;&gt; for line in data:
+...     linelist = line.split()
+...     print linelist
+...
+[&#39;blah&#39;, &#39;blah&#39;, &#39;blah&#39;, &#39;there&#39;, &#39;is&#39;, &#39;content&#39;, &#39;in&#39;, &#39;this&#39;, &#39;file.&#39;]
+[&#39;This&#39;, &#39;is&#39;, &#39;the&#39;, &#39;second&#39;, &#39;line&#39;, &#39;of&#39;, &#39;the&#39;, &#39;file.&#39;]</code></pre>
+<p>If your file was a CSV file (Comma Separated Values), you might follow this process to load the data.</p>
+<pre><code>&gt;&gt;&gt; for line in fid.readlines():
+...     for val in line.split(&#39;,&#39;)  # splits on commas
+...         print val  # ... or do whatever processing</code></pre>
+<div class="exercises">
+<ol style="list-style-type: decimal">
+<li>Here's a link to a <a href="http://real-chart.finance.yahoo.com/table.csv?s=GOOG&amp;a=09&amp;b=1&amp;c=2014&amp;d=09&amp;e=31&amp;f=2014&amp;g=d&amp;ignore=.csv">CSV file with Google's stock prices</a> for October 2014. Download the file and write a program to read the data and print the average value in the &quot;Close&quot; column.</li>
+<li>Here's a link to the <a href="https://raw.githubusercontent.com/python/cpython/master/README">readme file for the Python source code</a>. Download the file and write a program to read the data and print the most common word in the file. Hint: use a dictionary to keep track of how many times each word occurs.</li>
+</ol>
+</div>
+</div>
+</body>
+</html>
