@@ -141,7 +141,7 @@ This is the second line of the file.</code></pre>
 [&#39;This&#39;, &#39;is&#39;, &#39;the&#39;, &#39;second&#39;, &#39;line&#39;, &#39;of&#39;, &#39;the&#39;, &#39;file.&#39;]</code></pre>
 <p>If your file was a CSV file (Comma Separated Values), you might follow this process to load the data.</p>
 <pre><code>&gt;&gt;&gt; for line in fid.readlines():
-...     for val in line.split(&#39;,&#39;)  # splits on commas
+...     for val in line.split(&#39;,&#39;):  # splits on commas
 ...         print val  # ... or do whatever processing</code></pre>
 <div class="exercises">
 <ol style="list-style-type: decimal">
