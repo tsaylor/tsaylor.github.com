@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vim Is Wrong - Felix Felicis</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed.xml" title="Felix Felicis">
+        
+        
+    <link rel="canonical" href="/2012/vim-is-wrong.html">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>Vim Is Wrong</h1>
+            <div class="meta">
+                <time class="updated" datetime="2012-05-27T13:32:41+08:00" pubdate>May 27, 2012</time>
+            </div>
+        </header>
+
+        <p>I just saw this post on Stack Overflow about some <a href="http://stackoverflow.com/questions/10760326/merge-multiple-lines-in-vim/10760494#10760494">clever vim commands</a> and as a vim user  I was glad to learn some new tricks I can use.  Then I read the <a href="http://www.reddit.com/r/programming/comments/u4yzl/the_perfect_time_to_use_daft_punk_as_an_example/c4sg10d">reddit comments</a> about the story and found this (screencapped in case that link changes):</p>
+<p><a href="/wp-content/uploads/2012/05/Screen-Shot-2012-05-26-at-9.47.44-AM.png"><img src="https://tsaylor.wpengine.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-26-at-9.47.44-AM-300x155.png" alt=""/></a></p>
+<p>When writing software the code is written once but probably read dozens of times.  Therefore, readable code is very important.  This is one of the central tenets of Python.  These commenters are debating whether readability is equally as important with Vim commands as it is in programming languages.</p>
+<p>Previously I would have sided with the advocates of Vim&#39;s terse command syntax without much thought.  Short commands are easier to type and can be more effective.  However, this thread made me reconsider.  Because of Vim&#39;s terse commands, they are harder to learn and to remember.  And once a command is learned, it may be learned as a magical incantation and not a sequence of instructions, so the components won&#39;t be learned and reused for other needs.  So unless a Vim user spends a considerable amount of time learning commands, they&#39;ll be using the editor inefficiently and getting less done than they could because of Vim&#39;s terse commands and steep learning curve.  I&#39;m no longer sure that the efficiency gained by having short, easy to type commands is worth the efficiency lost by having a large set of hard to remember commands in your brain, and an equally large set that you aren&#39;t using because you don&#39;t know them.</p>
+<p>Python has a relatively small syntax.  Most things are explicit so there aren&#39;t a bunch of implicit things you have to remember to know what your code is doing.  The advantage that gives a developer is that they can write code more quickly without having to look up syntax rules or function calls all the time.  Also, a new developer can come to the code and will understand the program more quickly with fewer things to learn.  As I thought about Vim&#39;s command complexity, it occurred to me that we already have a command set that&#39;s easy to write, read, and remember, and it&#39;s quick and easy to write a short script like the one in that Stack Overflow comment: Python!  Why can&#39;t Vim use Python to edit the working document?  The <a href="http://orestis.gr/blog/2008/08/10/scripting-vim-with-python/">Python scripting support</a> is a good start for complex add-ons, but why not make it even more integrated with things like :find(&#39;query&#39;) instead of /query?  I&#39;m very curious if a readily accessible, full blown python interpreter would make my vim use more effective.</p>
+<p>P.S.  Emacs? </blasphemy></p>
+
+<h2 id="toc_0">Comments</h2>
+<p><strong><a href="#34" title="2012-06-06 02:35:21">Scott</a>:</strong> This sounds a lot like advocating tacking on a scripting interface to the driver controls in a car because it&#39;s hard to learn to drive without practice and justifying it by saying that the scripting interface makes driving skills more readable.</p>
+<p><strong><a href="#35" title="2012-06-07 10:08:20">tsaylor</a>:</strong> The difference between driving and vim is that almost all the controls on a car are physical, so by looking you can see what&#39;s available. That&#39;s more like a GUI interface, and this sort of UX problem is why GUIs were invented. There are software car controls, and even non-obvious physical ones, but they&#39;re all less essential features. Anyone can get in a car with an automatic transmission and start driving it, but they may have to ask or look for the lights and wipers (which is a bit frustrating, but tolerable).</p>
+<p><strong><a href="#36" title="2012-08-16 16:58:41">Cezar</a>:</strong> If you had such a car, and you put that scripting interface on it. That bucket of awesome would be called the Emacs.</p>
+<p><strong><a href="#37" title="2013-01-09 15:38:11">Brian Madigan</a>:</strong> The good thing about vim is that MOST of what you do with it day-to-day is pure muscle memory. The bad thing about vim&hellip; there is no bad thing about vim. Generally you have to learn emacs or vim. I started with emacs, but to do basic commands required what I felt to be unnatural contortions of the hands. Vi is more ergonomic, at least for me. You don&#39;t need to know 100% of what&#39;s available in Vi, just enough to use it for your own purposes.</p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>

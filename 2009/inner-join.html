@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inner Join - Felix Felicis</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed.xml" title="Felix Felicis">
+        
+        
+    <link rel="canonical" href="/2009/inner-join.html">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>Inner Join</h1>
+            <div class="meta">
+                <time class="updated" datetime="2009-04-02T17:15:38+08:00" pubdate>April 02, 2009</time>
+            </div>
+        </header>
+
+        <p>Today I had a sql query joining a bunch of tables that looked to be hanging.  I ran it and went to lunch, and when I got back it still wasn&#39;t done.  So I killed all my connection threads, restarted the server, tried to find every way I could to kill any errant table locks that were hanging around, but nothing would make it complete.  Finally after going through the syntax again I noticed that I left off the condition joining one of the tables, so it was joining 500,000 rows * 100,000 rows and it just hadn&#39;t finished in the hour I left it to work. I was more likely to have this problem because of the joining syntax I was taught: <code>select * from table1, table2 where table1.id = table2.id</code> As you add more tables the where clause gets longer, and combined with the rest of the query&#39;s constraints it gets easy to lose track of the ones that are necessary to do the joins properly. My boss never has this problem because he uses a different syntax: <code>select * from table1 inner join table2 on table1.id = table2.id where ...</code> This way, you can easily see what constraints are joining the tables together and would know if there was something missing. Also, this syntax is more like what you would use for left and right joins, so your queries will be more consistent. So from now on I&#39;m going to use this syntax to try and avoid wasting time figuring out a problem that&#39;s so easily preventable.</p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>

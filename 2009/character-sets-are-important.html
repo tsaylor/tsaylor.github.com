@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Character Sets are Important™ - Felix Felicis</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed.xml" title="Felix Felicis">
+        
+        
+    <link rel="canonical" href="/2009/character-sets-are-important.html">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>Character Sets are Important™</h1>
+            <div class="meta">
+                <time class="updated" datetime="2009-03-03T18:39:17+08:00" pubdate>March 03, 2009</time>
+            </div>
+        </header>
+
+        <p>(Note: since this article is about a character that shouldn&#39;t have been able to appear on my screen, I&#39;ve used that character several times to demonstrate.  If you can&#39;t see it, it&#39;s the trademark character, an elevated TM.) A few days ago I implemented an &ldquo;email this product to your friend&rdquo; feature for my new employer <a href="http://www.reusablebags.com">Reusable Bags</a>. It all went smoothly until I tested it with products like &ldquo;ACME Bags™ Workhorse Style 1500&rdquo;. The ™ in that name caused me endless problems, all related to one of the least known aspects of computing (at least for English speakers), character encoding. I&#39;ve read Joel Spolsky&#39;s <a href="http://www.joelonsoftware.com/articles/Unicode.html">article on character encoding</a>, so I know just enough to identify that my problem has to do with that, but not enough to know how to fix it. I find out that on our website, where the ™ displays fine, the charset is &ldquo;ISO-8854-1&rdquo; a.k.a. Latin1. This is used without problems all over the place. The curiosity here is that ™ <strong>is not in that charset</strong>. Somehow Firefox translated a sequence of bits from the web page into a character that shouldn&#39;t even exist. I couldn&#39;t wrap my head around that, so I kind of assumed that it was expressing it some other way I didn&#39;t know about and kept going. In the emails I was sending, the character was displaying as a sequence of 3 unusual characters, meaning it was being interpreted wrong. The charset in the email was Latin1 so that was what I would expect from the browser. Since it was 3 chars, that reinforced my idea that it was being encoded in some other unusual way (with multiple bytes) and I kept looking. I tried everything I could figure to try and make some headway on this bug. I used every English charset I could find everywhere to see if I was inputting the character in one set and interpreting it with another, but nothing worked. I would recount everything I tried, but there was so much I don&#39;t remember it all. I spent probably half a day just switching charsets and retrying things. Eventually we gave up on representing the character properly and just wanted to strip it out, so I threw in a &ldquo;str_replace(&quot;™&rdquo;, &ldquo;&rdquo;, $string)&ldquo;. This didn&#39;t work either! I could replace anything else in the string, but not that blasted ™! This problem was preposterous. There&#39;s no way PHP isn&#39;t recognizing this character. I wrote a testing script to verify the problem in absence of the rest of the page, and there it was recognized and replaced just fine. So what was the difference between the two scripts? The difference was the source of the text being searched. In my testing script, I typed both the needle and the haystack. In the real page, the haystack came out of the database. I don&#39;t think the database pays much attention to the character encoding, it just stores whatever sequence of bytes you enter. So the encoding used on that string depends on who entered it. Who did enter it? A Windows user. Therefore, the encoding was undoubtedly Windows-1252, which is one of the only encodings I found that includes the ™ character. If I had been smart about it earlier I would have realized that must be the case, because someone obviously entered the character and Windows-1252 is the only encoding that contains it in a way that&#39;s easy to enter. So how do I type that character in our code files that aren&#39;t Windows-1252? Well I know that in that encoding, ™ is represented by the number 157. That means I can get php to give it to me with the call &quot;chr(157)&rdquo;. I put that into my str_replace call from earlier and it worked perfectly; detected the ™ and stripped it out no problem. Originally I was going to berate the PHP developers for assuming the Windows-1252 charset in the chr() function but I subsequently realized that it doesn&#39;t matter what little picture is associated with character #157 in any encoding, the binary is still the same. So the lesson here is to not assume something quasi-magical is happening when two facts seem to conflict, like when I assumed the ™ was encoded in some multi-byte extension to Latin1. It can&#39;t be, that&#39;s not possible. The only common encoding in the English world that includes it is Windows-1252, so that had to be what I was seeing, despite Firefox reporting otherwise. If I had realized and accepted that earlier I would have saved myself a lot of shotgun debugging. Why Firefox did that is a separate question that I don&#39;t really care enough to answer, but IE does some auto-detecting of character encodings and displays whatever it thinks will work the best. Maybe Firefox did the same thing, ignoring the encoding specified in the document, and forgot to update the page info? That&#39;s all I can figure.</p>
+
+<h2 id="toc_0">Comments</h2>
+<p><strong><a href="#22" title="2009-03-04 20:42:24">Cezar</a>:</strong> I know in Python you can use the unicode module to have things converted to Unicode smartly. Don&#39;t know how to do it in php, or even if php is unicode safe. With some recent issues with unicode, I&#39;m glad that python is purely unicode with 3.0 and that Django fully supports unicode php unicode stuff. <a href="http://www.ibm.com/developerworks/library/os-php-unicode/index.html">www.ibm.com/developerworks/library/os-php-unicode/index.html</a></p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>
