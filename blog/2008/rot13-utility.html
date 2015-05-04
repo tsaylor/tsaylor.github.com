@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rot13 Utility - Felix Felicis</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed.xml" title="Felix Felicis">
+        
+        
+    <link rel="canonical" href="/2008/rot13-utility.html">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>Rot13 Utility</h1>
+            <div class="meta">
+                <time class="updated" datetime="2008-01-11T15:31:00+08:00" pubdate>January 11, 2008</time>
+            </div>
+        </header>
+
+        <p><strong>Update:</strong> My site no longer runs php, so this script is gone. The same functionality is available from <a href="http://rot13.com/?text=%s">http://rot13.com/?text=%s</a>. </p>
+
+<hr/>
+<p>Rot13 is a common method for obfuscating text, often used to randomize passwords or to hide &ldquo;spoilers&rdquo; from online discussions. The tool I most commonly use to translate rot13&#39;d text is <a href="http://www.rot13.com/">http://www.rot13.com/</a>, and that works well for translating long sections of ciphertext back in to plaintext. However, often there is just one or a few words to be translated from plaintext to ciphertext, and I find the site to be too much overhead for the task.  </p>
+<p>That&#39;s why I made a simple php script on my website to do my rot13 translations from now on. The key difference between mine and rot13.com is that the form on mine uses the GET method rather than POST. This allows me to make a firefox bookmark to translate text directly from the url bar. To do this, bookmark this url: <del><a href="http://timsaylor.com/tools/rot13.php?plaintext=%s">http://timsaylor.com/tools/rot13.php?plaintext=%s</a></del>. Then in the bookmark&#39;s properties add a value to the keyword field. My keyword is &ldquo;rot&rdquo;, so now whenever I type &ldquo;rot [text]&rdquo; into my url bar, it sends that to my script and opens a page with the ciphertext.  </p>
+<p>It&#39;s just a simple utility, and writing this blog post about it took longer than actually making the script itself. I just had to rot13 something today, though, and I remembered wishing that I could do it more simply. A quick search turned up <a href="http://www.retards.org/projects/rot13/rot13.txt">this rot13 php function</a>, which meant all the hard work was done. I just wrapped that up in an html form and put it online. The source is <del><a href="http://timsaylor.com/finished/rot13.php.txt">here</a></del>.</p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>

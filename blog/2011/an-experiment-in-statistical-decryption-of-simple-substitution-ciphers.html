@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>An experiment in statistical decryption of simple substitution ciphers - Felix Felicis</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed.xml" title="Felix Felicis">
+        
+        
+    <link rel="canonical" href="/2011/an-experiment-in-statistical-decryption-of-simple-substitution-ciphers.html">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>An experiment in statistical decryption of simple substitution ciphers</h1>
+            <div class="meta">
+                <time class="updated" datetime="2011-05-02T10:27:39+08:00" pubdate>May 02, 2011</time>
+            </div>
+        </header>
+
+        <p>When people put up an encrypted text puzzle online it is frequently a simple substitution cipher whereby each letter stands for a different letter and the plaintext is revealed by discovering the correct replacements for each letter. I always wondered if it was possible to automatically decrypt these puzzles by analyzing the frequency with which each character appears and compare that to the frequency of each character in the english language. (Obviously I&#39;m only decrypting english text, otherwise how would I know when it&#39;s right? Regardless, this code will work equally well for any language.) Recently I decided to test the theory. The code is below.  </p>
+
+<pre><code>import string
+
+cipher = '''
+Vs lbh'er yvxr zr, lbh znl erpnyy Gehzcrg Jvafbpx, gung avsgl yvggyr ovg bs fbsgjner gung cebivqrq na vagresnpr sebz jvaqbjf gb gur GPC/VC cebgbpby fgnpx gung crbcyr nyy bire gur jbeyq hfrq gb pbaarpg gb gur vagrearg sbe gur svefg gvzr. 
+
+Fb, vg gheaf bhg, gur thl jub znqr guvf qvqa'g znxr penc bss uvf jbex. Gehzcrg Jvafbpx jnf fgbyra naq npgviryl tvira njnl ba vafgnyy qvfxf sebz nyy gur znwbe grpu zntnmvarf naq va pbecbengr vafgnyyf. Ur jnf whfg n fznyy gvzr thl naq uvf pbzcnal unq ab jnl gb svtug gur enzcnag gursg. 
+
+Uvf anzr jnf Crgre Gnggnz. Fbzrbar ba erqqvg gubhtug vg'q or n tbbq vqrn gb fgneg n qbangvba cbg gb frr vs sbyxf jbhyq cbal hc sbe gur fbsgjner gung znqr vg cbffvoyr sbe gurz gb trg gb gur ovt jvqr jro. V qvq. :) 
+
+Fb, tb ba ol vs lbh hfrq vg, gbff n puvc be gjb va. Vg'f n avpr guvat gb qb.'''
+
+real_plaintext = '''
+If you're like me, you may recall Trumpet Winsock, that nifty little bit of software that provided an interface from windows to the TCP/IP protocol stack that people all over the world used to connect to the internet for the first time. 
+
+So, it turns out, the guy who made this didn't make crap off his work. Trumpet Winsock was stolen and actively given away on install disks from all the major tech magazines and in corporate installs. He was just a small time guy and his company had no way to fight the rampant theft. 
+
+His name was Peter Tattam. Someone on reddit thought it'd be a good idea to start a donation pot to see if folks would pony up for the software that made it possible for them to get to the big wide web. I did. :) 
+
+So, go on by if you used it, toss a chip or two in. It's a nice thing to do.
+'''
+
+print &quot;Contractions&quot;
+contractions = set()
+for word in cipher.split(' '):
+    if &quot;'&quot; in word:
+        contractions.add(word)
+print contractions
+
+print &quot;\nSingle Letters&quot;
+singles = set()
+for word in cipher.split(' '):
+    if len(word) == 1:
+        singles.add(word)
+print singles
+
+print &quot;\nLetter Frequency&quot;
+cipher = cipher.lower()
+charlist = list(cipher)
+chardict = {}
+for i in charlist:
+    if i in list('abcdefghijklmnopqrstuvwxyz'):
+        chardict[i] = chardict.get(i, 0) + 1
+charlist = zip(chardict.values(), chardict.keys())
+charlist = sorted(charlist, key=lambda x: x[0])
+charlist.reverse()
+for j,k in charlist:
+    print j, k
+
+
+print &quot;\nStatistical Frequency Plaintext&quot;
+intab = ''.join([x[1] for x in charlist])
+outtab = 'etaoinshrdlcumwfgypbvkjxqz'[:len(intab)]
+plain = string.translate(cipher, string.maketrans(intab, outtab))
+print plain</code></pre>
+<p>I immediately encountered a major problem with one of my assumptions: various sources disagreed on the frequency of letter occurrence in the english language. I always thought those numbers were well established since people widely regard &ldquo;E&rdquo; as the most common letter, and Pat Sajak has sworn by &ldquo;RSTLN&rdquo; for decades. Also, most ciphertexts are far too small to make frequencies very relevant. In fact, the example I originally started with didn&#39;t even include all 26 letters.</p>
+<p>After a few tries, this approach didn&#39;t work. It may be a useless approach because any text large enough for statistics to matter would probably not use a simple substitution cipher. However it was a fun experiment and a negative result is still a result worth sharing.</p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>
