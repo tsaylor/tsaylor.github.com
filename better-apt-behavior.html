@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Projects - Tim Saylor</title>
+        <title>Better Apt Behavior - Tim Saylor</title>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
         
             <link rel="alternate" type="application/rss+xml" href=" /feed" title="Tim Saylor">
         
         
-    <meta name="description" content="">
+    <link rel="canonical" href="/better-apt-behavior">
+    
 
     </head>
     <body>
@@ -33,26 +34,21 @@
                     </a>
                 
             </nav>
-            <h1>Hi, I&rsquo;m Tim</h1>
-                <p class="stage">I work for <a href='http://www.startupfoundry.com' target='_blank'>Startup Foundry</a>, developing in <a href='https://www.djangoproject.com' target='_blank'>Django</a> and <a href='https://facebook.github.io/react/'>React.js</a></p>
-                
+            
         </header>
 
-        <main>
-    <section class="archive">
-        <ol>
-        
-                <li class="header">
-                    <h3><a href="/2014/">2014</a></h3>
-                </li>
-            <li>
-                <time datetime="2014-02-10T00:48:27+06:00">2014-02-10</time>
-                <span><a href="/save-this-for-me">Save This For Me</a></span>
-            </li>
-        
-        </ol>
-        
-    </section>
+        <main><article>
+        <header>
+            <h1>Better Apt Behavior</h1>
+            <div class="meta">
+                <time class="updated" datetime="2007-04-26T17:37:00+06:00" pubdate>April 26, 2007</time>
+            </div>
+        </header>
+
+        <p>Ubuntu added a nifty feature to bash recently: when you run a command that isn&#39;t installed on your system it tells you what package you need to get it. What they need to do next is apply the same type of thing to apt. When I run &ldquo;apt-get install flup&rdquo; and it tells me there&#39;s no package called &ldquo;flup&rdquo;, it should automatically run &ldquo;apt-cache search flup&rdquo; and recommend &ldquo;Here are some packages you might have meant: &hellip; python-flup, &hellip;&rdquo; Maybe it could even list the top 10 most likely packages and have me press 0-9 to install one of them. Either way, it&#39;s silly that I have to first search for the package so I can find out what the distro named it, then run almost the same command again to install it.</p>
+
+
+    </article>
 </main>
         <footer class="site-footer">
             <p>&copy; Tim Saylor.

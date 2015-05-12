@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Get The Display Name Of A ModelChoiceField&#39;s Selected Value in Django - Tim Saylor</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed" title="Tim Saylor">
+        
+        
+    <link rel="canonical" href="/get-the-display-name-of-a-modelchoicefields-selected-value-in-django">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>Get The Display Name Of A ModelChoiceField&#39;s Selected Value in Django</h1>
+            <div class="meta">
+                <time class="updated" datetime="2012-05-25T17:23:38+06:00" pubdate>May 25, 2012</time>
+            </div>
+        </header>
+
+        <p>I just had a formset where each form had a pre-loaded ModelChoiceField, and I needed to display the name of the selected choice in the template.  On a model you would just use the <a href="https://docs.djangoproject.com/en/dev/ref/models/instances/?from=olddocs#django.db.models.Model.get_FOO_display">get_FOO_display()</a> method, but a form has no such convenience.  I found a number of almost solutions on Stack Overflow, and after poring over them I concluded the best solution for my problem was to add the following method to the form: </p>
+
+<pre><code>class QuestionLanguageForm(forms.Form):
+    ''' basic QuestionLanguage form '''
+    language = forms.ModelChoiceField(queryset=Language.objects.all())
+    short = forms.CharField()
+    place_holder = forms.CharField()
+    long = forms.CharField(widget=forms.Textarea(attrs={'rows':None, 'cols':None}))
+
+def get_language_name(self):
+    ''' returns the name of the selected language '''
+    try:
+       return Language.objects.get(id=self.initial['language']).name
+    except:
+       return None</code></pre>
+<p>This way I can use </p>
+
+<pre><code>{{ form.get_language_name }}</code></pre>
+<p>in my template and it prints the human readable name of the language set in my initial data.  This code is not robust; I catch all exceptions and ignore them because I&#39;m only using it in a circumstance where this code won&#39;t raise an exception (and in case it does, at least it won&#39;t fail catastrophically).  However proper error handling could be added pretty simply.  #ExerciseForTheReader P.S.  The title says &ldquo;selected&rdquo; value but I&#39;m actually using a pre-loaded value, not anything user selected.  If you need to get a user selected value you could use self.data or self.cleaned_data instead of self.initial.</p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>

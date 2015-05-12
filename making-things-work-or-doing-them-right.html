@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Making Things Work or Doing Them Right - Tim Saylor</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed" title="Tim Saylor">
+        
+        
+    <link rel="canonical" href="/making-things-work-or-doing-them-right">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>Making Things Work or Doing Them Right</h1>
+            <div class="meta">
+                <time class="updated" datetime="2009-03-09T14:37:39+06:00" pubdate>March 09, 2009</time>
+            </div>
+        </header>
+
+        <p>When I&#39;m trying to figure out how to get my CSS styles to render properly there are usually a number of possible solutions that &ldquo;work&rdquo;. I sometimes have trouble deciding which one is the best: the one with the most concise CSS? The one with the least entanglement with the HTML? It can be hard to know which way is &ldquo;right&rdquo;. </p>
+<p>While I was working on the <del><a href="http://timsaylor.com/portfolio/">portfolio</a></del> on this site, I had a problem like this. I wanted to float the screen shot to the left so the text would wrap around it, but I had to get the container for each screenshot/description to actually encapsulate them so its external spacing would line up properly. The usual way I knew to do it was to put another element in there that cleared the float so the container would be forced down where I want it. However this seems hackish and entangles the display with the content more than I like, so I looked for a better way. I found a page on the subject of <a href="http://www.quirksmode.org/css/clearing.html">clearing floats</a> and immediately I could see that the solution described there was the &ldquo;right&rdquo; way to do it. It&#39;s simple, unentangling, and above all it works. This is one I&#39;ll have to remember for next time.</p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>

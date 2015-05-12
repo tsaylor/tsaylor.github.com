@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Proxying web.py through apache - Tim Saylor</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
+        
+            <link rel="alternate" type="application/rss+xml" href=" /feed" title="Tim Saylor">
+        
+        
+    <link rel="canonical" href="/proxying-webpy-through-apache">
+    
+
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="buttons">
+                
+                    <a href="/" title="Home">
+                        <i data-icon="h"></i>
+                        <span class="text">Home</span>
+                    </a>
+                
+                    <a href="https://twitter.com/tsaylor" title="Twitter">
+                        <i data-icon="t"></i>
+                        <span class="text">Twitter</span>
+                    </a>
+                
+                    <a href="https://github.com/tsaylor" title="GitHub">
+                        <i data-icon="g"></i>
+                        <span class="text">GitHub</span>
+                    </a>
+                
+            </nav>
+            
+        </header>
+
+        <main><article>
+        <header>
+            <h1>Proxying web.py through apache</h1>
+            <div class="meta">
+                <time class="updated" datetime="2007-04-29T13:39:00+06:00" pubdate>April 29, 2007</time>
+            </div>
+        </header>
+
+        <p>I&#39;ve been wanting to try <a href="http://www.webpy.org/">web.py</a> for a while. It seems like it&#39;s easier to learn than <a href="http://www.djangoproject.com">Django</a> for making python web applications. I made the hello world app quickly and simply, and decided I&#39;d use it for a project I&#39;m working on.   </p>
+<p>That&#39;s when it turned south. I have to use php for another project I&#39;m doing, and I use cgi-irc (in perl through CGI) on that server, so I didn&#39;t want to re-setup all that stuff on lighttpd (the recommended method for running web.py). I tried running it through apache with cgi. After a few hours of that not working I switched to trying fastcgi on apache, also to no avail. I got fastcgi to the point where I was having an error that was common enough to be in an FAQ: I was getting 500 responses from apache because fastcgi/web.py wasn&#39;t starting fast enough for the flup WSGI library to realize it, so it would start them over and over until it eventually gave up. I decided I just wanted to see the thing work at this point, so I installed lighttpd and went through the setup for that. When that method didn&#39;t work I was fed up with their install instructions. I decided to try a method that John Quigley recommended. He said I should just run it with the internal http server that I&#39;ve already used successfully and proxy the requests through apache to web.py. This might not achieve the goal of making the server large scale production ready, but I don&#39;t really have to worry about that so much at this point. It does achieve my more important goal of making my php, cgi, and web.py applications all available through a single url and port, so I gave it a shot.   </p>
+<p>I looked up apache proxying and found it was done through mod_proxy, and each protocol you want to proxy has it&#39;s own module as well. So I installed mod_proxy and mod_proxy_http and added the following line to my apache2.conf file:  </p>
+
+<blockquote>
+<p><code>
+ProxyPass /lifelog http://192.168.1.20:8888  
+</code></p>
+</blockquote>
+<p>192.168.1.20 being the IP address of the server in question. It would be better to get it resolving localhost so this line can be used on other servers, but I didn&#39;t want to bother with it yet. I also had to change the proxy permission rules in proxy.conf to this:  </p>
+
+<blockquote>
+<p><br/>
+ProxyRequests Off  </p>
+</blockquote>
+<p><Proxy *><br/>
+AddDefaultCharset off<br/>
+Order allow,deny<br/>
+Allow from all<br/>
+</Proxy><br/>
+</p>
+<p>This allows any user online to use my ProxyPass rule. Note that I left &ldquo;ProxyRequests&rdquo; set to &ldquo;Off&rdquo;. If I turned that on, I would be an open proxy that spammers and hackers could use to hide their identity during their nefarious behavior.   </p>
+<p>Now all that&#39;s left is to start up my web.py server on port 8888 as specified in apache2.conf and whenever I go to /lifelog/* through apache, it&#39;ll send the request to web.py.</p>
+
+
+    </article>
+</main>
+        <footer class="site-footer">
+            <p>&copy; Tim Saylor.
+            <br>Powered by <a href="http://lab.lepture.com/liquidluck/">Felix Felicis</a>
+            <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a> by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>, by way of <a href="https://github.com/kennethlove/alex-gaynor-blog-design">Kenneth Love</a>.</p>
+        </footer>
+    </body>
+</html>

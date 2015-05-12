@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Projects - Tim Saylor</title>
+        <title>IOError: request data read error - Tim Saylor</title>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/static/fetch.css?v=0b9d7">
         
             <link rel="alternate" type="application/rss+xml" href=" /feed" title="Tim Saylor">
         
         
-    <meta name="description" content="">
+    <link rel="canonical" href="/ioerror-request-data-read-error">
+    
 
     </head>
     <body>
@@ -33,26 +34,23 @@
                     </a>
                 
             </nav>
-            <h1>Hi, I&rsquo;m Tim</h1>
-                <p class="stage">I work for <a href='http://www.startupfoundry.com' target='_blank'>Startup Foundry</a>, developing in <a href='https://www.djangoproject.com' target='_blank'>Django</a> and <a href='https://facebook.github.io/react/'>React.js</a></p>
-                
+            
         </header>
 
-        <main>
-    <section class="archive">
-        <ol>
-        
-                <li class="header">
-                    <h3><a href="/2014/">2014</a></h3>
-                </li>
-            <li>
-                <time datetime="2014-02-10T00:48:27+06:00">2014-02-10</time>
-                <span><a href="/save-this-for-me">Save This For Me</a></span>
-            </li>
-        
-        </ol>
-        
-    </section>
+        <main><article>
+        <header>
+            <h1>IOError: request data read error</h1>
+            <div class="meta">
+                <time class="updated" datetime="2012-02-27T12:34:19+06:00" pubdate>February 27, 2012</time>
+            </div>
+        </header>
+
+        <p>I couldn&#39;t find a good simple explanation of what this error means on the web, so to future googlers, you&#39;re welcome.</p>
+<p>This most likely means that the user made a web reqeuest, probably through ajax, on your site and then cut off the connection before the ajax request completed.  The connection can be cut off by clicking on another link, closing the browser, or things in the middle like firewalls and whatnot.</p>
+<p>There isn&#39;t a good solution to this issue that I could find, the error is just something that happens from time to time.  If it happens regularly and you don&#39;t think it&#39;s an accidental connection cut off, do some more exploring (particularly with firewalls and other potential connection problems), otherwise it can be ignored.</p>
+
+
+    </article>
 </main>
         <footer class="site-footer">
             <p>&copy; Tim Saylor.
