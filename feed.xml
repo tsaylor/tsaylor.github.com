@@ -6,32 +6,6 @@
     <updated>2015-05-11T23:37:23+06:00</updated>
     <id>http://www.timsaylor.com/</id>
     <entry>
-        <title type="html"><![CDATA[Everyone&#39;s Job Is Your Responsibility]]></title>
-        <author><name>Tim</name></author>
-        <link href="http://www.timsaylor.com/everyones-job-is-your-responsibility"/>
-        <published>2014-08-15T08:23:43+06:00</published>
-        <updated>2015-04-11T14:20:59+06:00</updated>
-        <id>http://www.timsaylor.com/everyones-job-is-your-responsibility</id>
-        <content type="html" xml:base="http://www.timsaylor.com/" xml:lang="en">
-            <![CDATA[ <p>I am a software developer. I have always worked for small to medium sized companies, between roughly 10 and 100 people. When I first started my professional career, I had been trained to write good software. I learned about software development processes, programming languages, databases, testing, algorithms, requirements, and all sorts of things that make me better at writing software. I was hired as a software developer and was assigned software to write, so I wrote it to the best of my ability. </p>
-<p>But that’s all I did, I wrote good software. And by itself, that’s worthless.  </p>
-<p>I write software to get paid, and that money comes from customers paying for products or services. When I write software, I do it as a part of a larger human system that takes customer problems, builds solutions for them, and sells the solutions so we can all keep getting paychecks. If any part of the human system stops working, the paychecks stop coming. </p>
-<p>The first time I was confronted with this reality I was working on a team with one other developer and a project manager. In every status meeting we reported that we were on track to deliver the product on time, but when that time came we discovered that the other developer had a different definition of “done” than the rest of us. The product was late and we lost some future business from that customer. The blame for that failure was mostly laid on the other developer, but a little of the blame went to everyone. We should have been integrating our code the whole time. We should have demoed it to each other, or reviewed each other’s code. Doing those things would have exposed the problem much earlier. Beyond our assigned jobs, we all had the responsibility to ensure that everyone else was doing their job so the human system would be working properly for the client. </p>
-<p>When you begin to consider the whole company as a human system, you can break it down into components and measure it like an engineering problem. (It will be an oversimplification, but it will do for our purposes.) </p>
-
-<ul>
-<li>Marketing’s job is to find random people most likely to buy your product and make sure they know about it and where to find it.</li>
-<li>Sales often has two functions, taking random people and converting them to contacts, and later, showing those contacts how your product can improve their lives so they buy it.</li>
-<li>Product Management takes data about customer problems, desires, and psychology, and creates a set of product requirements that meet customer needs, while still respecting business realities.</li>
-<li>Technology turns product requirements into a working software product, and keeps it working when customers start using it.</li>
-<li>Customer Service receives customer problems and complaints, keeps them working when the technology fails, and feeds info to product management when the product doesn’t meet their needs.</li>
-<li>Finance tracks the money coming in, and makes sure it exceeds the money going out.</li>
-<li>Management motivates employees to do their job, makes sure they have what they need, and keeps roadblocks and distractions out of their way.</li>
-</ul>
-<p>All of these functions are required to keep customers happy. They aren’t always manifested in separate groups of people, but the tasks exist at every product company. If your company is lacking any one of them then you’re running on borrowed time. It’s essential to restore that function before the paychecks stop. That’s explicitly management’s job, but if you see the problem and don’t bring it to management for a solution you may be looking at the seeds of your own unemployment.</p>
-]]>
-        </content>
-    </entry><entry>
         <title type="html"><![CDATA[Save This For Me]]></title>
         <author><name>Tim</name></author>
         <link href="http://www.timsaylor.com/save-this-for-me"/>
@@ -438,6 +412,17 @@ print plain</code></pre>
 <h2 id="toc_0">Comments</h2>
 <p><strong><a href="#26" title="2010-01-26 00:48:11">George Griffin</a>:</strong> Great! I was just having this problem. I was just uploading the whole project to my server every time I wanted to test it. Thanks, Tim!</p>
 <p><strong><a href="#27" title="2010-03-06 14:22:01">Steve Achabal</a>:</strong> Thanks for this post. I am new at django and this will help a lot.</p>
+]]>
+        </content>
+    </entry><entry>
+        <title type="html"><![CDATA[Idea: Book Sprints]]></title>
+        <author><name>Tim</name></author>
+        <link href="http://www.timsaylor.com/idea-book-sprints"/>
+        <published>2010-01-11T18:12:06+06:00</published>
+        <updated>2015-05-11T23:06:46+06:00</updated>
+        <id>http://www.timsaylor.com/idea-book-sprints</id>
+        <content type="html" xml:base="http://www.timsaylor.com/" xml:lang="en">
+            <![CDATA[ <p>Do you have a topic you want to learn about by reading a book, but you anticipate having trouble getting through it all? Do you spend so much effort slogging through a book that you never get around to applying the knowledge you wanted to get out of it? I do, so I tried to think of a better way to get the information I want out of the book without getting bogged down and giving up. I came up with Book Sprints. Basically, iterate through books a chapter at a time and treat them as a choose your own adventure. Choose your starting point, probably the first chapter, and as you go keep track of what topic you understood the least or want to learn about the most. Then skip to another chapter that addresses that topic the best. Many people do this already, but it could be enhanced by collaborating with other people who are reading or have read the same book. The value add in this idea is to create a web site that allows people to participate in a discussion about each chapter of the book individually. This discussion can help the reader to keep track of what they&#39;ve learned from the book, and to enhance their understanding with input from other people who may be subject matter experts or may have just read more of the book. The discussion can pique the reader&#39;s curiosity about another section of the book and inspire them to keep on reading. So what do you think of this idea? Is it worth thinking out a little further, or is there not enough here to be worth anything?</p>
 ]]>
         </content>
     </entry>
