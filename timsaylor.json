@@ -1,0 +1,36 @@
+{
+    "content": [
+        {
+            "name": "cards",
+            "template": "card.html",
+            "datafile": "icebox-for-chrome.yaml"
+        },
+        {
+            "name": "cards",
+            "template": "card.html",
+            "datafile": "save-this-for-me.json"
+        },
+        {
+            "name": "cards",
+            "template": "card.html",
+            "datafile": "ordclub.json"
+        },
+        {
+            "name": "cards",
+            "template": "card.html",
+            "datafile": "ron-may-facts.json"
+        },
+        {
+            "url": "/",
+            "template": "home.html",
+            "assets": ["style.css"]
+        },
+        {
+            "url": "/tools-i-love/",
+            "template": "post.html",
+            "assets": ["style.css"],
+            "datafile": "tools-i-love.yaml"
+        },
+        {"url": "CNAME", "template": "CNAME"}
+    ]
+}

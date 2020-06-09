@@ -1,0 +1,9 @@
+<div class="card">
+    <h3>{{title}}</h3>
+    <p>{{body}}</p>
+    <p>
+        {% for link in links %}
+        <a href="{{link.url}}">{{link.text}}</a>
+        {% endfor %}
+    </p>
+</div>
