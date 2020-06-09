@@ -23,8 +23,9 @@ jobs:
     - name: Build site and push to master
       run: |
         python -m easybake build --site=timsaylor.json
-        msg=$(git log --format=%s -n 1 head)
-        git checkout master
-        git rm *
-        mv build/* .
-        git commit -am "Deploying '$msg'"
+        git log
+        # msg=$(git log --format=%s -n 1 head)
+        # git checkout master
+        # git rm *
+        # mv build/* .
+        # git commit -am "Deploying '$msg'"
