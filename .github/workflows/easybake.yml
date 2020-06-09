@@ -24,11 +24,9 @@ jobs:
       run: |
         python -m easybake build --site=timsaylor.json
         msg=$(git log --format=%s -n 1)
-        git remote -v
         git fetch
-        git branch --list
         git checkout master
         git pull
-        git rm *
+        git rm -r *
         mv build/* .
         git commit -am "Deploying '$msg'"
