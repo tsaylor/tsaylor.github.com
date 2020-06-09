@@ -1,0 +1,47 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Easybake build and deploy
+
+on:
+  push:
+    branches: [ source ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.6
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Build site and push to master
+      run: |
+        git config --global user.email "githubactionbot@example.com"
+        git config --global user.name "Github Action Bot"
+        msg=$(git log --format=%s -n 1)
+        python -m easybake build --site=timsaylor.json
+        echo "*** Built files ***"
+        find build
+        echo "*** End built files ***"
+        git fetch && git checkout master && git pull --ff-only
+        touch dummy-file-to-make-sure-theres-something-to-remove
+        ls | grep -v build | xargs git rm -r --ignore-unmatch
+        rm dummy-file-to-make-sure-theres-something-to-remove
+        mv build/* .
+        rmdir build
+        git add *
+        if output=$(git status --porcelain) && [ -z "$output" ] || git diff -s --cached --exit-code; then
+          echo "No changes to the site, skipping deploy"
+        else
+          git commit -m "Deploying '$msg'"
+          echo "*** Changes in this deploy ***"
+          git log --stat -n1
+          echo "*** End changes in this deploy ***"
+          git push
+        fi
