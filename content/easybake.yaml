@@ -1,0 +1,34 @@
+title: Easybake
+body: >
+  I wanted a simple way to make a website and keep it updated that was easier than writing html
+  directly and didn't have server software I'd need to keep updated, so I built a new, very simple
+  static site generator.
+links:
+- text: Source
+  url: https://github.com/tsaylor/easybake
+- text: Read More
+  url: /easybake/
+postbody:
+  _language: markdown
+  content: |
+    I've had a website for a long time - as a software developer and internet citizen I've felt
+    like I need some kind of online presence and when I started this was the best way to do that.
+    I've made that site with manual html, Wordpress, a custom Django blogging app, Jekyll, and a
+    similar tool called Liquid Luck, and all of them were either overkill for what I was trying to
+    do or made it too hard to publish something. Most web publishing is based on blogging, which I
+    don't actually want to do. I just want a few pages that show things I've made or that I like or
+    think are important (a portfolio, a personal home page, etc.). When you remove all the features
+    that people expect from a general purpose blogging app you can make writing and publishing web
+    content a lot simpler and more focused on your content.
+
+    Easybake uses a combination of semi-structured data, html templates, and markdown to define
+    your web content and arrange it into the website structure you want. It can generate pages or
+    snippets that you can include in other pages. It can include related styles, images, or other
+    files. It does all this with very little code and few dependencies, and it can build and deploy
+    to github pages using github actions. Adding a new page is as simple as writing some markdown
+    for the content and yaml to define where it should appear in your site, then pushing it to git
+    and a few moments later it appears on the web. I used it to build this site, and you can see
+    the source for it [here](https://github.com/tsaylor/tsaylor.github.com/tree/source).
+
+    You can find more details in the
+    [readme on github](https://github.com/tsaylor/easybake/blob/master/README.md).

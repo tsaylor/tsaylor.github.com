@@ -3,6 +3,17 @@
         {
             "name": "cards",
             "template": "card.html",
+            "datafile": "easybake.yaml"
+        },
+        {
+            "url": "/easybake/",
+            "template": "post.html",
+            "assets": ["style.css"],
+            "datafile": "easybake.yaml"
+        },
+        {
+            "name": "cards",
+            "template": "card.html",
             "datafile": "icebox-for-chrome.yaml"
         },
         {
@@ -24,12 +35,6 @@
             "url": "/",
             "template": "home.html",
             "assets": ["style.css"]
-        },
-        {
-            "url": "/tools-i-looove/",
-            "template": "post.html",
-            "assets": ["style.css"],
-            "datafile": "tools-i-love.yaml"
         },
         {"url": "CNAME", "template": "CNAME"}
     ]
