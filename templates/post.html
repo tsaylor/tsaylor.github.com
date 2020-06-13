@@ -9,14 +9,15 @@
 </head>
 <body>
     <div class="content">
+        <div class="card postheader" style="margin-top: 0;">
+            <img class="avatar" src="https://pbs.twimg.com/profile_images/553788416165302273/U0ufI2qA_400x400.jpeg">
+            <a href="/">Home</a>
+            <a href="/reading-list/">Reading List</a>
+            <a href="https://github.com/tsaylor/">Github</a>
+        </div>
         <div class="card">
-            <h3>{{title}}</h3>
-            <p>{{postbody}}</p>
-            <p>
-                {% for link in links %}
-                <a href="{{link.url}}">{{link.text}}</a>
-                {% endfor %}
-            </p>
+            <h1>{{title}}</h1>
+            {{postbody}}
             <p style="text-align: right;"><a href="/">Home</a></p>
         </div>
     </div>
