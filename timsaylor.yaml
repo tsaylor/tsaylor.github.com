@@ -1,0 +1,38 @@
+content:
+- name: cards
+  template: card.html
+  datafile: easybake.yaml
+- url: "/easybake/"
+  template: post.html
+  assets:
+  - style.css
+  - tsaylor-avatar-400.jpg
+  datafile: easybake.yaml
+# - name: cards
+#   template: card.html
+#   datafile: reading-list.yaml
+- url: "/reading-list/"
+  template: post.html
+  assets:
+  - style.css
+  - tsaylor-avatar-400.jpg
+  datafile: reading-list.yaml
+- name: cards
+  template: card.html
+  datafile: icebox-for-chrome.yaml
+- name: cards
+  template: card.html
+  datafile: save-this-for-me.json
+- name: cards
+  template: card.html
+  datafile: ordclub.json
+- name: cards
+  template: card.html
+  datafile: ron-may-facts.json
+- url: "/"
+  template: home.html
+  assets:
+  - style.css
+  - tsaylor-avatar-400.jpg
+- url: CNAME
+  template: CNAME

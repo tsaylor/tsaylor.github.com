@@ -1,0 +1,59 @@
+title: Reading List
+body: >
+  When I read books or articles that are really insightful or capture
+  a point well, I add them to this list.
+links:
+- text: Read More
+  url: /reading-list/
+postbody:
+  _language: markdown
+  content: |
+    Whenever I find an article, book, or podcast that I learn from or that I can use to
+    explain ideas to others I add it here.
+
+    ### Python
+    https://dabeaz-course.github.io/practical-python/
+
+    ### Javascript
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+    https://scrimba.com/g/glearnreact
+
+    ### Git
+    https://chris.beams.io/posts/git-commit/
+    https://blog.sffc.xyz/post/185195398930/why-you-should-use-git-pull-ff-only
+
+    ### Code Review
+    https://chrome.google.com/webstore/detail/better-pull-request-for-g/nfhdjopbhlggibjlimhdbogflgmbiahc?hl=en
+    https://www.ibm.com/developerworks/rational/library/11-proven-practices-for-peer-review/index.html
+    https://alexgaynor.net/2015/dec/29/shrinking-code-review/
+    https://www.atlassian.com/blog/git/written-unwritten-guide-pull-requests
+    https://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e
+
+    ### Databases
+    https://www.braintreepayments.com/blog/safe-operations-for-high-volume-postgresql/
+    https://medium.com/braintree-product-technology/postgresql-at-scale-database-schema-changes-without-downtime-20d3749ed680
+
+    ### Testing
+    https://dhh.dk/2014/test-induced-design-damage.html
+    https://martinfowler.com/articles/consumerDrivenContracts.html
+
+    ### Architecture
+    http://boringtechnology.club/
+    https://v4.chriskrycho.com/2019/user-interfaces-are-api-boundaries.html
+
+    ### APIs
+    https://stripe.com/blog/api-versioning
+
+    ### Coding tools
+    https://www.foragoodstrftime.com/
+    https://regex101.com/
+    https://zaa.ch/jsonlint/
+    https://www.json2yaml.com/
+    https://codebeautify.org/python-formatter-beautifier
+
+    ### Product Delivery
+    https://cutle.fish/blog/12-signs-youre-working-in-a-feature-factory
+    http://datadriven.club/
+
+    ### Management
+    https://www.15five.com/blog/one-on-one-meeting-checklist/

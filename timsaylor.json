@@ -14,6 +14,17 @@
         {
             "name": "cards",
             "template": "card.html",
+            "datafile": "reading-list.yaml"
+        },
+        {
+            "url": "/reading-list/",
+            "template": "post.html",
+            "assets": ["style.css", "tsaylor-avatar-400.jpg"],
+            "datafile": "reading-list.yaml"
+        },
+        {
+            "name": "cards",
+            "template": "card.html",
             "datafile": "icebox-for-chrome.yaml"
         },
         {
