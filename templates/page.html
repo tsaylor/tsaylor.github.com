@@ -20,6 +20,13 @@
         </nav>
     </header>
     <main>
+        {% if sublinks -%}
+        <ul>
+        {% for link in sublinks %}
+        <li><a href="/{{ link.0 }}">{{ link.1 | title }}</a></li>
+        {% endfor %}
+        </ul>
+        {%- endif %}
         {{ content | safe | indent(width=8) }}
     </main>
 </body>
